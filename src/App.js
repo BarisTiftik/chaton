@@ -18,7 +18,7 @@ function App() {
     else if (currentScreen === 1)
       return <Login onLoginHandler={newScreenHandler}/>;
     else if (currentScreen === 2)
-      return <Messages/>; //onMessagesHandler={newScreenHandler}
+      return <Messages onMessages={newScreenHandler}/>;
   }
 
   return (

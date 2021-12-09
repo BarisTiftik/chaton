@@ -18,7 +18,7 @@ export default function Login(props) {
                 <label>Phone Number</label> <br />
                 <input
                     type="tel"
-                    required
+
                 />
                 <br />
 
