@@ -42,10 +42,10 @@ export default function Register(props) {
                 <legend>Register</legend>
 
                 <label>Phone Number</label> <br />
-                <input type="tel" required /> <br />
+                <input type="tel" onChange={phoneNumHandler} required /> <br />
 
                 <label>User Name</label> <br />
-                <input type="name" required />
+                <input type="name" onChange={nameHandler} required />
                 <br />
 
                 <button type="submit">Register</button><br/><br/>
