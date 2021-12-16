@@ -16,18 +16,13 @@ export default function Login(props) {
                 <legend>Login</legend>
 
                 <label>Phone Number</label> <br />
-                <input
-                    type="tel"
-
-                />
+                <input type="tel" required />
                 <br />
 
-                <button onClick={goToMessages}>Login</button><br/><br/>
-
-                <label>Go Back to the Register Screen</label><br/>
-                <button onClick={goBackToRegister}>Register</button>
-
+                <button type="submit" onClick={goToMessages}>Login</button><br/><br/>
             </form>
+            <label>Go Back to the Register Screen</label><br/>
+            <button onClick={goBackToRegister}>Register</button>
         </div>
     );
 }
