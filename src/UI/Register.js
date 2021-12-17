@@ -27,7 +27,7 @@ export default function Register(props) {
       headers: {"Content-Type": "application/x-www-form-urlencoded"}
     }
 
-    function add(event){
+    function addUser(event){
       event.preventDefault();
       axios.post("http://localhost:80/react-mysql/addUser.php", person, config).then(response => {
         console.log(response)
@@ -38,7 +38,7 @@ export default function Register(props) {
 
     return (
         <div id="register">
-            <form onSubmit={add}>
+            <form onSubmit={addUser}>
                 <legend>Register</legend>
 
                 <label>Phone Number</label> <br />
