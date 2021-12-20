@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
+import chaton from "./chaton.png";
 
 export default function Messages(props) {
 
@@ -8,13 +9,11 @@ export default function Messages(props) {
   const [persons, setPersons] = useState([]);
 
   function goToChat(num, name) {
-    //console.log("eheh" + num + "meheh" + name);
     receiverPhoneNumHandler(num, name);
     props.onMessages(3);
   }
 
   function receiverPhoneNumHandler(num, name) {
-    console.log("eheh" + num + "meheh" + name);
     props.onReceiver(num, name);
   }
 
@@ -31,10 +30,13 @@ export default function Messages(props) {
 
   function PersonItem(props) {
     return(
+      <div>
       <button
         onClick={()=>goToChat(props.person.phone_num,props.person.name)}> {props.person.name}
       </button>
-    );
+      <p> _________________________ </p>
+      </div>
+  );
   }
 
   function PersonList(props) {
@@ -45,6 +47,7 @@ export default function Messages(props) {
       <PersonItem name={props.contacts[2]}/>
       </div>*/
       <div>
+        <p> _________________________ </p>
         {props.contacts.map((p) => (
           <PersonItem person={p}/>
         ))}
@@ -54,8 +57,9 @@ export default function Messages(props) {
 
   return(
     <div id="messages">
+      <br/><img src={chaton}/>
       {getUsers}
-      <legend>Messages</legend>
+      <h1>{props.sendRec[0].name}'s Messages</h1>
       <PersonList contacts={persons}/><br/>
       <button onClick={logOut}>Log Out</button>
     </div>

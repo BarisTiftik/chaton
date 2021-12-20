@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
+import chaton from "./chaton.png";
 
 export default function Register(props) {
 
@@ -31,6 +32,7 @@ export default function Register(props) {
       event.preventDefault();
       axios.post("http://localhost:80/react-mysql/addUser.php", person, config).then(response => {
         console.log(response)
+        alert("Successful Registration");
       }).catch(error => {
         console.log("Error Occurred!");
       });
@@ -38,8 +40,11 @@ export default function Register(props) {
 
     return (
         <div id="register">
+
+          <br/><img src={chaton}/>
+
             <form onSubmit={addUser}>
-                <legend>Register</legend>
+                <h1><b>Register</b></h1>
 
                 <label>Phone Number</label> <br />
                 <input type="tel" onChange={phoneNumHandler} required /> <br />

@@ -62,7 +62,7 @@ function App() {
     else if (currentScreen === 1)
       return <Login onLoginHandler={newScreenHandler} onSender={senderHandler}/>;
     else if (currentScreen === 2)
-      return <Messages onMessages={newScreenHandler} onReceiver={receiverHandler}/>;
+      return <Messages sendRec={sendRec} onMessages={newScreenHandler} onReceiver={receiverHandler}/>;
     else if(currentScreen === 3)
       return <Chat sendRec={sendRec} onChat={newScreenHandler}/>
   }
