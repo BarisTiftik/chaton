@@ -32,7 +32,7 @@ export default function Register(props) {
       event.preventDefault();
       axios.post("http://localhost:80/react-mysql/addUser.php", person, config).then(response => {
         console.log(response)
-        alert("Successful Registration");
+        alert("Registration form submitted");
       }).catch(error => {
         console.log("Error Occurred!");
       });

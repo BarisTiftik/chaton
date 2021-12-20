@@ -42,7 +42,7 @@ export default function Login(props) {
     //console.log(persons.length);
     if (persons.length > 0)
       return persons.filter(p => p.phone_num === senderPhoneNum);
-    alert("Please check your phone number! - denememememe");
+    //alert("Please check your phone number! - denememememe");
     return [];
   }
 

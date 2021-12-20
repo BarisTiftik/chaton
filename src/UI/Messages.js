@@ -34,7 +34,7 @@ export default function Messages(props) {
       <button
         onClick={()=>goToChat(props.person.phone_num,props.person.name)}> {props.person.name}
       </button>
-      <p> _________________________ </p>
+        <p style={{color : 'gray'}}> ___________________ </p>
       </div>
   );
   }
@@ -47,7 +47,7 @@ export default function Messages(props) {
       <PersonItem name={props.contacts[2]}/>
       </div>*/
       <div>
-        <p> _________________________ </p>
+        <p style={{color : 'gray'}}> ___________________ </p>
         {props.contacts.map((p) => (
           <PersonItem person={p}/>
         ))}
