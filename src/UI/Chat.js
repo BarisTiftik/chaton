@@ -4,10 +4,9 @@ import chaton from "./chaton.png";
 
 export default function Chat(props) {
 
-  useEffect(getMessages, []);
-
   const [newMessage, setNewMessage] = useState("");
   const [messageObjects, setMessageObjects] = useState([]);
+  useEffect(getMessages, [messageObjects]);
 
   // fonksiyonlarını yaz
   function newMessageHandler(event) {
@@ -56,7 +55,7 @@ export default function Chat(props) {
     }
 
     axios.post("http://localhost:80/react-mysql/getMessages.php", sendRec, config).then(response => {
-        console.log("resp data " + response.data);
+        //console.log("resp data " + response.data);
         setMessageObjects(response.data);
     }).catch(error => {
       console.log("Error Occurred!");

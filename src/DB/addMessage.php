@@ -17,8 +17,8 @@ $insert = $db->prepare("insert into message(id, text, date, sender_num, receiver
 $insert->bindParam(1, $id, PDO::PARAM_INT);
 $insert->bindParam(2, $message, PDO::PARAM_STR);
 $insert->bindParam(3, $date, PDO::PARAM_STR);
-$insert->bindParam(4, $senderNum, PDO::PARAM_INT);
-$insert->bindParam(5, $receiverNum, PDO::PARAM_INT);
+$insert->bindParam(4, $senderNum, PDO::PARAM_STR);
+$insert->bindParam(5, $receiverNum, PDO::PARAM_STR);
 
 $control = $insert->execute();
 
