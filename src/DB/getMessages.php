@@ -10,6 +10,33 @@ $request = json_decode($postdata);
 $senderNumber = $request->senderNumber;
 $receiverNumber = $request->receiverNumber;
 
+
+/*$query = $db->prepare("select distinct sender.name as sender_name, sender.phone_num as sender_phone_num,
+                receiver.name as receiver_name, receiver.phone_num as receiver_phone_num, 
+                msg.text, msg.date 
+from message msg inner join person sender on msg.sender_num = sender.phone_num
+                  inner join person receiver on msg.receiver_num = receiver.phone_num;
+                       ");*/
+
+/*$query = $db->prepare("select  message.sender, u1.name as sender_name, message.receiver, u2.name as receiver_name
+                        from message
+                        inner join person u1 on u1.phone_num = message.sender_num
+                        inner join person u2 on u2.phone_num = message.receiver_num;
+                       ");*/
+
+/*$query = $db->prepare("select m.*, s.name as sender_name, r.name as receiver_name
+                        from message AS m
+                        join person AS s on m.sender_num = ?
+                        join person AS r on m.receiver_num = ?;
+                       ");*/
+
+/*
+$query = $db->prepare("select * 
+                       from message AS m, person AS p
+                       where ( m.sender_num = p.phone_num OR m.receiver_num = p.phone_num ) AND 
+                       ( (m.sender_num = ? AND m.receiver_num = ?) OR (m.sender_num = ? AND m.receiver_num = ?) )");
+ */
+
 $query2 = $db->prepare("select p2.name, m2.text, m2.date
                     from message AS m2, person AS p2
                     where m2.sender_num = p2.phone_num AND (m2.sender_num = ? AND m2.receiver_num = ?)");

@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import axios from "axios";
 import chaton from "./chaton.png";
+import Button from '@mui/material/Button';
+import {Paper} from "@mui/material";
 
 export default function Register(props) {
 
@@ -39,24 +41,23 @@ export default function Register(props) {
     }
 
     return (
-        <div id="register">
-
+       <div id="register" style={{height:"100vh", backgroundColor: 'black'}}>
           <br/><img src={chaton}/>
-
-            <form onSubmit={addUser}>
+          <Paper sx={{marginLeft:'37%', marginRight:'37%', backgroundColor:'paleturquoise'}}>
+             <form onSubmit={addUser}>
                 <h1><b>Register</b></h1>
 
                 <label>Phone Number</label> <br />
                 <input type="tel" onChange={phoneNumHandler} required /> <br />
 
                 <label>User Name</label> <br />
-                <input type="name" onChange={nameHandler} required />
-                <br />
+                <input type="name" onChange={nameHandler} required /><br />
 
-                <button type="submit">Register</button><br/><br/>
-            </form>
-            <label>Already have an account?</label><br/>
-            <button onClick={goToLoginScreen}>Login</button>
-        </div>
+                <Button sx={{backgroundColor: 'black'}} type="submit" variant="contained">Register</Button><br/><br/>
+             </form>
+             <label>Already have an account?</label><br/>
+             <Button sx={{backgroundColor: 'black'}} onClick={goToLoginScreen} variant="contained">Login</Button><br/><br/>
+          </Paper>
+       </div>
     );
 }

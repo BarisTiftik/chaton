@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import chaton from "./chaton.png";
+import Button from '@mui/material/Button';
+import {Paper, TextField} from "@mui/material";
 
 export default function Login(props) {
 
@@ -8,7 +10,6 @@ export default function Login(props) {
 
   const [persons, setPersons] = useState([]);
   const [senderPhoneNum, setSenderPhoneNum] = useState("");
-  const [senderName, setSenderName] = useState("");
 
   function goBackToRegister() {
     props.onLoginHandler(0);
@@ -16,7 +17,6 @@ export default function Login(props) {
 
   function goToMessages() {
     if(checkUser().length === 1) {
-      //setSenderName(checkUser()[0].name);
       props.onSender(senderPhoneNum, checkUser()[0].name);
       props.onLoginHandler(2);
     }
@@ -26,7 +26,6 @@ export default function Login(props) {
 
   function phoneNumHandler(event) {
     setSenderPhoneNum(event.target.value);
-    //props.onSender(event.target.value, checkUser()[0].name);
   }
 
   function getUsers() {
@@ -39,26 +38,26 @@ export default function Login(props) {
   }
 
   function checkUser() {
-    //console.log(persons.length);
     if (persons.length > 0)
       return persons.filter(p => p.phone_num === senderPhoneNum);
-    //alert("Please check your phone number! - denememememe");
     return [];
   }
 
   return (
-    <div id="login">
+    <div id="login" style={{height:"100vh", backgroundColor: 'black'}}>
       <br/><img src={chaton}/>
       {getUsers}
-      <form onSubmit={goToMessages}>
-        <h1>Login</h1>
-         <label>Phone Number</label> <br />
-        <input type="tel" onChange={phoneNumHandler} required />
+      <Paper sx={{marginLeft:'37%', marginRight:'37%', backgroundColor:'paleturquoise'}}>
+        <h1 style={{color:'black'}}>Login</h1>
+        <form onSubmit={goToMessages}>
+          <label>Phone Number</label> <br />
+          <input type="tel" onChange={phoneNumHandler} required />
         <br />
-        <button type="submit" >Login</button><br/><br/>
+        <Button sx={{ backgroundColor: 'black'}} type="submit" variant="contained">Login</Button><br/><br/>
       </form>
       <label>Back to the Register Screen</label><br/>
-      <button onClick={goBackToRegister}>Register</button>
+      <Button sx={{backgroundColor: 'black'}} onClick={goBackToRegister} variant="contained">Register</Button><br/><br/>
+      </Paper>
     </div>
     );
 }

@@ -8,7 +8,7 @@ $request = json_decode($postdata);
 
 $id = $request->id;
 $message = $request->text;
-$date = $request->date;
+$date = date("Y-m-d H:i:s", strtotime('+2 hours'));
 $senderNum = $request->senderNum;
 $receiverNum = $request->receiverNum;
 
