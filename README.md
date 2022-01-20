@@ -1,3 +1,14 @@
+# An instant messaging application for CS 411 Software Architecture Design Class
+
+React + PHP + MySQL
+
+![100](https://user-images.githubusercontent.com/48119937/150424141-1fb74c5e-4a21-4332-8580-2df367cd1a0a.png)
+![101](https://user-images.githubusercontent.com/48119937/150424267-cb92e9a0-8f00-4abb-80fa-6beb580db23e.png)
+![102](https://user-images.githubusercontent.com/48119937/150424330-8999d7cf-9c24-482c-ba57-70d7d662654e.png)
+![103](https://user-images.githubusercontent.com/48119937/150424423-202b8dbc-acb5-4eb6-9c15-d488f806250f.png)
+
+Setup:
+
 Chaton app connects to MySQL database.
 
 Xampp should be downloaded.
